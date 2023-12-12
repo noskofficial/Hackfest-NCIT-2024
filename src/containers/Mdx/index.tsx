@@ -1,5 +1,5 @@
 // import { MDXProvider } from '@mdx-js/react';
-import {Fragment} from 'react';
+import { Fragment } from "react";
 // import Post from '../../blog/post.mdx';
 // import Content from "!babel-loader!@mdx-js/loader!../../blog/post.mdx";
 // ^-- Assumes an integration is used to compile MDX to JS, such as
@@ -8,7 +8,7 @@ import {Fragment} from 'react';
 // `options.providerImportSource: '@mdx-js/react'`.
 
 const components = {
-  h1: (props: any) => <h1 {...props} />
+  h1: (props: any) => <h1 {...props} />,
 };
 
 export const MdxContent = () => {

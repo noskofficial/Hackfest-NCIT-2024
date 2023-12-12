@@ -16,11 +16,11 @@ const Wrapper = styled.div`
 
   @media (max-width: 1000px) {
     margin: 0;
-    display: ${(props) => (props.toggle ? "none" : "static")};
+    display: ${(props) => (props.toggle == "true" ? "none" : "static")};
     height: 100vh;
     width: 100vw;
     position: fixed;
-    top: ${(props) => (props.toggle ? "-1000px" : "0px")};
+    top: ${(props) => (props.toggle == "true" ? "-1000px" : "0px")};
     transition: top 1s;
     .nav-content {
       height: 35%;
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
 `;
 
 export const NavBar = () => {
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState("true");
   const [isOffset, setIsOffset] = useState(false);
 
   const navigation = useRef();
@@ -50,9 +50,9 @@ export const NavBar = () => {
 
   const handleOutsideCick = (event: Event, ref: any) => {
     if (!ref.current?.contains(event.target)) {
-      setToggle(true);
+      setToggle("true");
     } else {
-      setToggle(false);
+      setToggle("false");
     }
   };
 
@@ -101,7 +101,7 @@ export const NavBar = () => {
               </li>
               <img
                 className="s-close"
-                onClick={() => setToggle(true)}
+                onClick={() => setToggle("true")}
                 src={logoClose}
               />
             </ul>
@@ -110,7 +110,7 @@ export const NavBar = () => {
         </Wrapper>
         <img
           className="s-open"
-          onClick={() => setToggle(false)}
+          onClick={() => setToggle("false")}
           src={hamLogo}
         />
       </nav>

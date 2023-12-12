@@ -95,7 +95,7 @@ export const Calender = ({ data }: any) => {
           : { type: "UPDATE_CALENDER_VIEW", data: 1 }
       }
     >
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence>
         <motion.div
           key={state.index ?? "empty"}
           initial={{ y: 10, opacity: 0 }}
