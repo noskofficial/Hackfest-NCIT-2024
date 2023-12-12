@@ -1,6 +1,6 @@
 import './style.scss';
 
-export default function Waves(props) {
+export default function Waves(props: {top: string, left: string, type: string}) {
   return (
     <div
       className={`container ${props.type}`}
