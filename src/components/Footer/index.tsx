@@ -1,31 +1,34 @@
-import {useEffect, useState} from 'react';
-import {FOOTER, SOCIALS, TOP_SECTION} from '../../Module/General.js';
-import {Btn} from '../Landing/index.js';
-import cross from './assets/cross.svg';
+import { FC, useEffect, useState } from "react";
+import { SOCIALS, TOP_SECTION } from "../../Module/General.js";
+import { Btn } from "../Landing/index.js";
+import cross from "./assets/cross.svg";
 // import DevPost from './assets/icons8-dev-post.svg';
-import Facebook from './assets/icons8-facebook-50.png';
-import Dis from './assets/icons8-discord.svg';
-import Insta from './assets/icons8-instagram.svg';
-import Linked from './assets/icons8-linkedin-2.svg';
-import Mail from './assets/icons8-mail.svg';
-import Twitter from './assets/icons8-twitter.svg';
-import PrivacyPolicy from './';
-// import TermsOfUse from './';
-//------------------------------------------------------------------
-import './style.scss';
+import Facebook from "./assets/icons8-facebook-50.png";
+import Dis from "./assets/icons8-discord.svg";
+import Insta from "./assets/icons8-instagram.svg";
+import Linked from "./assets/icons8-linkedin-2.svg";
+import Mail from "./assets/icons8-mail.svg";
+import Twitter from "./assets/icons8-twitter.svg";
 
-const GithubTemplate = ({hideTemplate}) => {
+//------------------------------------------------------------------
+import "./style.scss";
+
+interface GithubTemplateProps {
+  hideTemplate: () => void;
+}
+
+const GithubTemplate: FC<GithubTemplateProps> = ({ hideTemplate }) => {
   return (
     <div className="template">
       <div className="template-left">
         <p>
-          Join us to{' '}
+          Join us to{" "}
           <a href={TOP_SECTION.HACKERS_REGISTRATION_FORM_LINK}>Gear Up</a>,
           where we will be hosting PUBLIC workshops, tech talks, panel
           discussions, and career sessions!
         </p>
       </div>
-      <img onClick={hideTemplate} src={cross} />
+      <img onClick={hideTemplate} src={cross} alt="Close" />
     </div>
   );
 };
@@ -35,14 +38,14 @@ const Footer = () => {
   const [viewTemplate, setViewTemplate] = useState(true);
 
   useEffect(() => {
-    window.addEventListener('scroll', listenScrollEvent);
+    window.addEventListener("scroll", listenScrollEvent);
 
     return () => {
-      window.removeEventListener('scroll', listenScrollEvent);
+      window.removeEventListener("scroll", listenScrollEvent);
     };
   }, []);
 
-  const listenScrollEvent = e => {
+  const listenScrollEvent = () => {
     if (window.scrollY > 2800) setTemplate(true);
     else if (window.scrollY < 2800) setTemplate(false);
   };
@@ -94,10 +97,10 @@ const Footer = () => {
         </div>
         <div className="footer_info">
           <p>
-            Contact us{' '}
+            Contact us{" "}
             <a href={SOCIALS.email}>
               <em>{SOCIALS.mail}</em>
-            </a>{' '}
+            </a>{" "}
           </p>
 
           {/* {FOOTER.Privacy_policy.required && (
@@ -120,7 +123,12 @@ const Footer = () => {
               <p>Terms of Use</p>
             </a>
           )} */}
-          <p>Made with ❤️ with <a href='https://github.com/Abusayid693/Hackathon-website-template'>Limbo</a></p>
+          <p>
+            Made with ❤️ with{" "}
+            <a href="https://github.com/Abusayid693/Hackathon-website-template">
+              Limbo
+            </a>
+          </p>
         </div>
         {template && viewTemplate && (
           <GithubTemplate hideTemplate={() => setViewTemplate(false)} />
