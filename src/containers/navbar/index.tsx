@@ -95,11 +95,7 @@ export const NavBar = () => {
                   <span className="links">prizes </span>{" "}
                 </Link>
               </li>
-              <li>
-                <Link to={`#sponsors`}>
-                  <span className="links">sponsors </span>{" "}
-                </Link>
-              </li>
+
               <li>
                 <Link to={`#team`}>
                   <span className="links">team </span>{" "}

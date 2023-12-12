@@ -114,8 +114,10 @@ export default function HomePage() {
             <Logo />
           </Col>
         </Row>
-        <div id="events">
-          Current Events
+        <div id="events" style={{ textAlign: "center", padding: "40px" }}>
+          <h2 style={{ fontSize: "24px", marginBottom: "20px" }}>
+            Current Events
+          </h2>
           <CurrentEvents></CurrentEvents>
         </div>
 
