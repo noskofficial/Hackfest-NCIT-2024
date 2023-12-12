@@ -100,7 +100,7 @@ const Footer = () => {
             </a>{' '}
           </p>
 
-          {FOOTER.Privacy_policy.required && (
+          {/* {FOOTER.Privacy_policy.required && (
             <a
               href={PrivacyPolicy}
               download
@@ -109,7 +109,7 @@ const Footer = () => {
             >
               <p>Privacy Policy</p>
             </a>
-          )}
+          )} */}
           {/* {FOOTER.Terms_of_use.required && (
             <a
               href={TermsOfUse}
@@ -120,7 +120,7 @@ const Footer = () => {
               <p>Terms of Use</p>
             </a>
           )} */}
-          <p>Made with ❤️</p>
+          <p>Made with ❤️ with <a href='https://github.com/Abusayid693/Hackathon-website-template'>Limbo</a></p>
         </div>
         {template && viewTemplate && (
           <GithubTemplate hideTemplate={() => setViewTemplate(false)} />

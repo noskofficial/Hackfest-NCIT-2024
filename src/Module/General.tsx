@@ -30,14 +30,14 @@ import lyin from './Assets/teami/lyin.jpg';
 
 import me from './Assets/teami/me.png';
 import moon from './Assets/teami/moon.png';
-import Ryah from './Assets/teami/Ryah.jpg';
+// import Ryah from './Assets/teami/Ryah.jpg';
 import zoha from './Assets/teami/zoha.png';
 
 const TOP_SECTION = {
   TITLE: 'Join HackFest NCIT 2024',
   Typed_effect: ['72 hours of creation', 'Win awesome prizes'],
   SHORT_DESCRIPTION:
-    'Join us on 11th,12th & 13th January 2024 with over 100 students from NCIT for 72 hours of creation, innovation, & fun.',
+    'Join us on 11th, 12th & 13th January 2024 with over 100 students from NCIT for 72 hours of creation, innovation, & fun.',
   IMG_SRC: boy,
   DISCORD_LINK: '',
   JUDGES_FORM_LINK:
@@ -382,7 +382,7 @@ const frequentlyAskedQuestions = [
       {
         label: 'Can I volunteer?',
         content:
-          'Yes we are actively looking for volunteers, fill the form (in footer section) we will be glad to have you.'
+          'We are not currently looking for volunteers, but you can join our Discord server to stay updated for any future opportunities.'
       },
       {
         label: 'Will there be swag?',
