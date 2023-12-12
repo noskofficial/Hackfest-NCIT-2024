@@ -14,14 +14,19 @@ const CalenderView = () => {
   return (
     <div className="card-body">
       {["S", "M", "T", "W", "T", "F", "S"].map((day, j) => (
-        <Flexbox key={j} alignCenter justifyCenter className="card-body-header">
+        <Flexbox
+          key={j}
+          alignCenter={true}
+          justifyCenter={true}
+          className="card-body-header"
+        >
           <p color="#9E9E9E">{day}</p>
         </Flexbox>
       ))}
       {state.dates.map((day: any, j: any) => (
         <Flexbox
-          alignCenter
-          justifyCenter
+          alignCenter={true}
+          justifyCenter={true}
           className={
             day.dumpDay
               ? "card-body-inner"

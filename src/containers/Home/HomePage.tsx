@@ -149,7 +149,7 @@ export default function HomePage() {
         {FOOTER.JOIN_TEAM.required && (
           <JoinTeam
             placeholder="Join our team"
-            formLink={FOOTER.JOIN_TEAM}
+            formLink={FOOTER.JOIN_TEAM.src}
             content="Interested in joining our team"
           />
         )}

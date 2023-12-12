@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import styled from "styled-components";
 import HomePage from "../Home/HomePage";
 import logoClose from "./assets/ham-c.svg";
