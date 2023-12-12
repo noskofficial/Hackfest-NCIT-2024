@@ -1,6 +1,17 @@
-import './style.scss';
+import React from "react";
+import "./style.scss";
 
-function PrizeHeading(props) {
+interface PrizeHeadingProps {
+  type: string;
+}
+
+interface FirstPrizeProps {
+  icon: React.ReactNode; // Adjust the type based on the actual type of your 'icon' prop
+  type: string;
+  content: string;
+}
+
+function PrizeHeading(props: PrizeHeadingProps) {
   return (
     <div className="PrizeHeading">
       <h1>{props.type}</h1>
@@ -8,7 +19,7 @@ function PrizeHeading(props) {
   );
 }
 
-function FirstPrize(props) {
+function FirstPrize(props: FirstPrizeProps) {
   return (
     <div className="Prizes">
       {props.icon}
@@ -18,4 +29,4 @@ function FirstPrize(props) {
   );
 }
 
-export {FirstPrize, PrizeHeading};
+export { FirstPrize, PrizeHeading };
