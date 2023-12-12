@@ -13,7 +13,7 @@ import {
   Sponsor,
   SponsorsHead,
   SponsorUS,
-} from "../../components/Sponsors/sponsors.jsx";
+} from "../../components/Sponsors/sponsors";
 import { JoinTeam, Member } from "../../components/Team";
 import {
   FOOTER,

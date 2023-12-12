@@ -1,4 +1,4 @@
-import {SOCIALS, TOP_SECTION} from '../../Module/General.js';
+import {SOCIALS, TOP_SECTION} from '../../Module/General';
 import MytypedComponent from '../Typed/index';
 import './style.css';
 
