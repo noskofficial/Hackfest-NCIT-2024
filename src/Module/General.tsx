@@ -330,6 +330,9 @@ const JudgesInfo = [
  * in a group of 3.
  */
 
+const sponsorLogos = [
+  [{ src: ncit }, { src: nosk }, { src: ncit }], //Array 1
+];
 // const sponsorLogos = [
 //   [{src: cfc}, {src: sublime}, {src: echoAR}], //Array 1
 //   [{src: taskade}, {src: Replit}, {src: qoom}], //Array 2
@@ -390,29 +393,6 @@ const frequentlyAskedQuestions = [
   ],
 ];
 
-//Testing by Kushal
-
-const currentEvents = [
-  {
-    id: "1",
-    img: "asdasd",
-    img_alt: "asdasd",
-    name: "Kushal",
-    desc: "123",
-    location: "asdasd",
-    contact: "9817348228",
-  },
-  {
-    id: "1",
-    img: "asdasd",
-    img_alt: "asdasd",
-    name: "Kushal",
-    desc: "123",
-    location: "asdasd",
-    contact: "9817348228",
-  },
-];
-
 export {
   TOP_SECTION,
   MIDDLE_SECTION,
@@ -425,5 +405,4 @@ export {
   frequentlyAskedQuestions,
   schedule,
   calenderStartingDate,
-  currentEvents, //test
 };

@@ -1,5 +1,5 @@
 import { SOCIALS } from "../../Module/General.js";
-import { Btn } from "../Landing/index.jsx";
+import { Btn } from "../Landing/index";
 import "./sponsors.scss";
 
 function SponsorsHead() {

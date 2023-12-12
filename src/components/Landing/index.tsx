@@ -1,8 +1,13 @@
-import {SOCIALS, TOP_SECTION} from '../../Module/General.js';
-import MytypedComponent from '../Typed/index';
-import './style.css';
+import { SOCIALS, TOP_SECTION } from "../../Module/General";
+import MytypedComponent from "../Typed/index";
+import "./style.css";
 
-const Btn = props => {
+const Btn = (props: {
+  class?: string;
+  ico?: string;
+  type?: string;
+  overlay?: string;
+}) => {
   return (
     <button className={props.class}>
       <i className={props.ico}></i>
@@ -38,7 +43,7 @@ const Myinfo = () => {
           />
         </a>
         <a href={TOP_SECTION.HACKERS_REGISTRATION_FORM_LINK}>
-          {' '}
+          {" "}
           <Btn
             class="register"
             type="Register "
@@ -47,12 +52,12 @@ const Myinfo = () => {
         </a>
       </div>
       {/* <div className="buttom-group"> */}
-        {/* <a href={TOP_SECTION.JUDGES_FORM_LINK}>
+      {/* <a href={TOP_SECTION.JUDGES_FORM_LINK}>
           {' '}
           <Btn class="sponsor_btn" type="Judges" overlay="Fill the form" />
         </a> */}
 
-        {/* <a href={TOP_SECTION.HACKERS_REGISTRATION_FORM_LINK}>
+      {/* <a href={TOP_SECTION.HACKERS_REGISTRATION_FORM_LINK}>
           {' '}
           <Btn
             class="register"
@@ -65,4 +70,4 @@ const Myinfo = () => {
   );
 };
 
-export {Btn, Myinfo};
+export { Btn, Myinfo };

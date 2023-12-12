@@ -1,5 +1,5 @@
 import React from 'react';
-import {Btn} from '../Landing/index.jsx';
+import {Btn} from '../Landing/index';
 import './style.css';
 
 interface IJoinTeam {
