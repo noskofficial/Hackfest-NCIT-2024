@@ -330,18 +330,18 @@ const JudgesInfo = [
  * in a group of 3.
  */
 
-const sponsorLogos = [
-  [{ src: ncit }, { src: nosk }, { src: ncit }], //Array 1
-];
 // const sponsorLogos = [
-//   [{src: cfc}, {src: sublime}, {src: echoAR}], //Array 1
-//   [{src: taskade}, {src: Replit}, {src: qoom}], //Array 2
-//   [{src: interviewC}, {src: pass}, {src: glimpse}], //Array 3
-//   [{src: egg}, {src: ll}, {src: ACF}] //Array 4
+//   [{ src: ncit }, { src: nosk }, { src: ncit }], //Array 1
 // ];
-const sponsorLogos = [
-  [{}, { src: cfc }, {}], //Array 1
-];
+// // const sponsorLogos = [
+// //   [{src: cfc}, {src: sublime}, {src: echoAR}], //Array 1
+// //   [{src: taskade}, {src: Replit}, {src: qoom}], //Array 2
+// //   [{src: interviewC}, {src: pass}, {src: glimpse}], //Array 3
+// //   [{src: egg}, {src: ll}, {src: ACF}] //Array 4
+// // ];
+// const sponsorLogos = [
+//   [{}, { src: cfc }, {}], //Array 1
+// ];
 
 /** Instructions
  * Follow the strcuture provided below to add as many as FAQ's you want
@@ -399,7 +399,7 @@ export {
   SOCIALS,
   FOOTER,
   Prizeinfo,
-  sponsorLogos,
+  // sponsorLogos,
   TeamInfo,
   JudgesInfo,
   frequentlyAskedQuestions,

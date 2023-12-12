@@ -13,16 +13,15 @@ import {
   Sponsor,
   SponsorsHead,
   SponsorUS,
-} from "../../components/Sponsors/sponsors";
-import { JoinTeam, Member } from "../../components/Team";
+} from "../../components/Sponsors/sponsors.jsx";
+import { Member } from "../../components/Team";
 import {
   FOOTER,
   frequentlyAskedQuestions,
   JudgesInfo,
   Prizeinfo,
-  sponsorLogos,
+  // sponsorLogos,
   TeamInfo,
-  TOP_SECTION,
 } from "../../Module/General";
 import MyCalender from "../calender";
 import "./about.css";
@@ -30,18 +29,18 @@ import pattern from "./assets/pattern4.png";
 import { UseMedia } from "../../hooks/useMedia.js";
 import { CurrentEvents } from "../../site-data/currentEvents.js";
 
-const SponsorGroup = (props, index) => {
-  return (
-    <Row key={index}>
-      {props.map((s, i) => (
-        <Col key={i} className="" sm={12} lg={4} md={6}>
-          {" "}
-          <Sponsor srcx={s.src} />{" "}
-        </Col>
-      ))}
-    </Row>
-  );
-};
+// const SponsorGroup = (props, index) => {
+//   return (
+//     <Row key={index}>
+//       {props.map((s, i) => (
+//         <Col key={i} className="" sm={12} lg={4} md={6}>
+//           {" "}
+//           <Sponsor srcx={s.src} />{" "}
+//         </Col>
+//       ))}
+//     </Row>
+//   );
+// };
 
 // Prize group
 const PrizeGroup = (props, index) => {
@@ -140,11 +139,11 @@ export default function HomePage() {
 
         {/* ********Sponsors here ***** */}
 
-        <Row className="sponsorSection" id="sponsors">
+        {/* <Row className="sponsorSection" id="sponsors">
           <SponsorsHead />
           <SponsorUS />
           {sponsorLogos.map(SponsorGroup)}
-        </Row>
+        </Row> */}
         {/* ********Sponsors ending here ***** */}
 
         {media && <Birds top="120vh" left="0vh" type="" />}

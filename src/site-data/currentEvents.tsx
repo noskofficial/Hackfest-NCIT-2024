@@ -1,4 +1,14 @@
-import { currentEvents } from "../Module/General";
+const currentEvents = [
+  {
+    id: "1",
+    img: "./images/test.png",
+    img_alt: "Test Event",
+    name: "Test Event",
+    desc: "Gaming zone",
+    location: "Room 601, B",
+    contact: "Abhilekh",
+  },
+];
 
 // import { MdxContent } from "../containers/Mdx";
 
