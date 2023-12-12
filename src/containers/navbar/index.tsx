@@ -81,6 +81,11 @@ export const NavBar = () => {
                 </Link>
               </li>
               <li>
+                <Link to={`#events`}>
+                  <span className="links">Current Events </span>{" "}
+                </Link>
+              </li>
+              <li>
                 <Link to={`#faq`}>
                   <span className="links">FAQ </span>{" "}
                 </Link>

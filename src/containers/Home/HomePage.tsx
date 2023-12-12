@@ -28,6 +28,7 @@ import MyCalender from "../calender";
 import "./about.css";
 import pattern from "./assets/pattern4.png";
 import { UseMedia } from "../../hooks/useMedia.js";
+import { CurrentEvents } from "../../site-data/currentEvents.js";
 
 const SponsorGroup = (props, index) => {
   return (
@@ -114,6 +115,10 @@ export default function HomePage() {
             <Logo />
           </Col>
         </Row>
+        <div id="events">
+          Current Events
+          <CurrentEvents></CurrentEvents>
+        </div>
 
         {/* ********Frequently asked Questions here ***** */}
         <div className="Myfaqs" id="faq">
