@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import { useEffect } from "react";
 
 function Devpost() {
   useEffect(() => {
-    window.location.href = 'https://devpost.com/';
+    window.location.href = "https://devpost.com/";
   });
   return <div></div>;
 }

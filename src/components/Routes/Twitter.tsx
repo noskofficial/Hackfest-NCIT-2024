@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import { useEffect } from "react";
 
 function Twitter() {
   useEffect(() => {
-    window.location.href = 'https://twitter.com/officialnosk';
+    window.location.href = "https://twitter.com/officialnosk";
   }, []);
   return <div></div>;
 }
