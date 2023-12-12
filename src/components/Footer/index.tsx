@@ -2,14 +2,15 @@ import {useEffect, useState} from 'react';
 import {FOOTER, SOCIALS, TOP_SECTION} from '../../Module/General.js';
 import {Btn} from '../Landing/index.js';
 import cross from './assets/cross.svg';
-import DevPost from './assets/icons8-dev-post.svg';
+// import DevPost from './assets/icons8-dev-post.svg';
+import Facebook from './assets/icons8-facebook-50.png';
 import Dis from './assets/icons8-discord.svg';
 import Insta from './assets/icons8-instagram.svg';
 import Linked from './assets/icons8-linkedin-2.svg';
 import Mail from './assets/icons8-mail.svg';
 import Twitter from './assets/icons8-twitter.svg';
-import PrivacyPolicy from './assets/Privacy policy.pdf';
-import TermsOfUse from './assets/Terms of use.pdf';
+import PrivacyPolicy from './';
+// import TermsOfUse from './';
 //------------------------------------------------------------------
 import './style.scss';
 
@@ -76,8 +77,8 @@ const Footer = () => {
             </a>
           </div>
           <div className="social-icon">
-            <a rel="noreferrer" target="_blank" href={SOCIALS.devpost}>
-              <img src={DevPost} alt="" />
+            <a rel="noreferrer" target="_blank" href={SOCIALS.facebook}>
+              <img src={Facebook} alt="" />
             </a>
           </div>
         </div>
@@ -85,11 +86,11 @@ const Footer = () => {
           <a href={TOP_SECTION.HACKERS_REGISTRATION_FORM_LINK}>
             <Btn type="Register" overlay="Fill the form" />
           </a>
-          {FOOTER.VOLUNTEERING_FORM.required && (
+          {/* {FOOTER.VOLUNTEERING_FORM.required && (
             <a href={FOOTER.VOLUNTEERING_FORM.src}>
               <Btn type="Volunteer" class="Volunteer" overlay="Fill the form" />
             </a>
-          )}
+          )} */}
         </div>
         <div className="footer_info">
           <p>
@@ -109,7 +110,7 @@ const Footer = () => {
               <p>Privacy Policy</p>
             </a>
           )}
-          {FOOTER.Terms_of_use.required && (
+          {/* {FOOTER.Terms_of_use.required && (
             <a
               href={TermsOfUse}
               download
@@ -118,7 +119,7 @@ const Footer = () => {
             >
               <p>Terms of Use</p>
             </a>
-          )}
+          )} */}
           <p>Made with ❤️</p>
         </div>
         {template && viewTemplate && (

@@ -34,51 +34,52 @@ import Ryah from './Assets/teami/Ryah.jpg';
 import zoha from './Assets/teami/zoha.png';
 
 const TOP_SECTION = {
-  TITLE: 'Join Limbo Hacks',
-  Typed_effect: ['24 hours of creation', 'Win awesome prizes'],
+  TITLE: 'Join HackFest NCIT 2024',
+  Typed_effect: ['72 hours of creation', 'Win awesome prizes'],
   SHORT_DESCRIPTION:
-    'Join us on 20th November 2021 with over 300 students from across the nation for 24 hours of creation, innovation, & fun.',
+    'Join us on 11th,12th & 13th January 2024 with over 100 students from NCIT for 72 hours of creation, innovation, & fun.',
   IMG_SRC: boy,
   DISCORD_LINK: '',
   JUDGES_FORM_LINK:
-    'https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__jZdNhdUNVRQMUg4VllMRURDN1lON0haNFVCQUgySC4u',
+    'https://nosk.org.np/',
   HACKERS_REGISTRATION_FORM_LINK:
-    'https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__jZdNhdUNTgyREk0VzdEMU9RVFlPMVNWVEJQUkNYMi4u'
+    'https://nosk.org.np/'
 };
 
 const SOCIALS = {
-  instagram: 'https://www.instagram.com/limbohacks/',
-  discord: 'https://discord.com/invite/8XJSzmtWPp',
-  linkedin: 'https://www.linkedin.com/company/limbo-hacks/',
-  twitter: 'https://twitter.com/HacksLimbo',
-  devpost: 'https://limbo-hacks-12968.devpost.com/',
-  email: 'mailto:hello@limbohacks.tech',
-  mail: 'hello@limbohacks.tech'
+  instagram: 'https://www.instagram.com/officialnosk/',
+  discord: 'https://discord.gg/WFBkV5k4Ue',
+  facebook: 'https://www.facebook.com/nosklub/',
+  linkedin: 'https://www.linkedin.com/company/officialnosk/',
+  twitter: 'https://twitter.com/officialnosk',
+  devpost: 'https://devpost.com/',
+  email: 'mailto:nosk@ncit.edu.np',
+  mail: 'nosk@ncit.edu.np'
 };
 
 const MIDDLE_SECTION = {
-  TITLE: 'What is Limbo hacks?',
+  TITLE: 'What is Hackfest NCIT 2024?',
   LONG_DESCRIPTION:
-    'Hack Limbo is 24 hour long running hackathon will be held on November 20th & 21th , We calls for hackers, artists, coders, designers, tech evangelists, creatives, and developers from all disciplines to take a part to win awesome prizes and collaborate with other developers . Throughout the weekend hackers at Limbo Hacks will have unique opportunities to learn from each other trying hands in new technologies We are determined to have an all-inclusive and diverse group of students attending.',
+    'HackFest NCIT 2024 is 72 hour long running hackathon will be held on November 20th & 21th , Hack Fest 2024 is the lethargy breaking initiative  driven to energize and engage NCIT to take active role and participation in the Tech domain through innovative and competitive events, competitions, workshops and techno centric activities. We call for hackers, artists, coders, designers, tech evangelists, creatives, and developers from all disciplines to take a part to win awesome prizes and collaborate with other developers .',
   LOGO: hackathonLogo
 };
 
 const FOOTER = {
   VOLUNTEERING_FORM: {
     required: true,
-    src: 'https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__jZdNhdUNFBQME44TzJZWDc2UFgwTUtLN0xDQVYyUi4u'
+    src: 'https://nosk.org.np/'
   },
   JOIN_TEAM: {
     required: true,
-    src: 'https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__jZdNhdUOUhEQkJSRk02OEU4SlBMTUdYOFIxOTNZSy4u'
+    src: 'https://nosk.org.np/'
   },
   Privacy_policy: {
     required: true,
-    src: ''
+    src: 'https://nosk.org.np/'
   },
   Terms_of_use: {
     required: true,
-    src: ''
+    src: 'https://nosk.org.np/'
   }
 };
 
@@ -86,47 +87,47 @@ const FOOTER = {
  *
  * INSTRUCTIONS
  *
- * Date format : 8-11-2021, 18-11-2021 (without trailing zeros)
+ * Date format : 11-01-2024, 12-01-2024,13-01-2024 (without trailing zeros)
  */
 
 const calenderStartingDate = {
-  month: 12,
-  year: 2021
+  month: 1,
+  year: 2024
 };
 
 const schedule = [
   {
-    day: '8-11-2021',
+    day: '11-1-2024',
     events: [
       {
-        title: 'Intro to phycycology',
-        timings: '12 AM - 1 Pm',
-        link: 'https://google.com'
+        title: 'First Day of Hackathon',
+        timings: '10AM - 5PM',
+        link: 'https://nosk.org.np/'
       }
     ]
   },
   {
-    day: '5-12-2021',
+    day: '12-1-2024',
     events: [
       {
-        title: 'Intro to deep learning',
-        timings: '12 AM - 1 Pm',
-        link: 'https://google.com'
+        title: 'Second Day First Half of Hackathon',
+        timings: '10AM - 1PM',
+        link: 'https://nosk.org.np/'
       },
       {
-        title: 'Intro to deep learning',
-        timings: '12 AM - 1 Pm',
-        link: 'https://google.com'
+        title: 'Second day Second Half of Hackathon',
+        timings: '2PM - 5PM',
+        link: 'https://nosk.org.np/'
       }
     ]
   },
   {
-    day: '3-12-2021',
+    day: '13-1-2024',
     events: [
       {
-        title: 'Intro to phycycology',
-        timings: '12 AM - 1 Pm',
-        link: 'https://google.com'
+        title: 'Third Day of Hackathon',
+        timings: '10AM - 5PM',
+        link: 'https://nosk.org.np/'
       }
     ]
   },
@@ -134,9 +135,9 @@ const schedule = [
     day: '1-12-2021',
     events: [
       {
-        title: 'Intro to deep learning',
-        timings: '12 AM - 1 Pm',
-        link: 'https://google.com'
+        title: '',
+        timings: '10AM - 5PM',
+        link: 'https://nosk.org.np/'
       }
     ]
   },
@@ -145,8 +146,8 @@ const schedule = [
     events: [
       {
         title: 'Intro to phycycology',
-        timings: '12 AM - 1 Pm',
-        link: 'https://google.com'
+        timings: '10AM - 5PM',
+        link: 'https://nosk.org.np/'
       }
     ]
   }
@@ -195,23 +196,19 @@ const Prizeinfo = [
         'You project will qualify for this prize if you participate alone without a team though we encourage you to participate with a team'
     },
     {
-      icon: <i className="first fas fa-4x fa-trophy"></i>,
-      type: ' Best Beginner',
-      content: 'Your project will qualify for this category if atleast 50% '
-    },
-    {
       icon: <i className=" fifth fa-3x fas fa-book-open"></i>,
       type: 'Best UI/UX',
       content: 'Project with most creative designs will be UI/UX track'
-    }
+    },
+    {
+      icon: <i className="fas fa-4x sixth fa-male"></i>,
+      type: 'Best Project with the use of Open Source Tools',
+      content: 'Must use Open Source Tools in your project to win this category'
+    },
   ],
   [
     //Array 3
-    {
-      icon: <i className="fas fa-4x sixth fa-male"></i>,
-      type: 'Best Web App with Qoom',
-      content: 'Must use qoom in your project to win this category'
-    },
+    {},
     {
       icon: <i className="fas fa-user-friends seventh fa-3x "></i>,
       type: 'More prizes',
@@ -230,39 +227,46 @@ const TeamInfo = [
   [
     //Array 1
     {
-      Name: 'Rehan',
-      role: 'Organizer',
-      github: 'https://github.com/Limbo-Hacks/Hackathon-website-template',
-      linkedin: '',
+      Name: 'Bibek',
+      role: 'Bibek',
+      github: 'https://github.com/bibekdhkl',
+      linkedin: 'https://www.linkedin.com/in/bibekdhkl/',
       img: me
     },
     {
-      Name: 'Moon',
-      role: 'Organizer',
+      Name: 'Aishu',
+      role: 'Aishu',
       github: '',
       linkedin: '',
       img: moon
     },
     {
-      Name: 'Erika',
-      role: 'Organizer',
+      Name: 'Bishal',
+      role: 'Bishal',
       github: '',
       linkedin: '',
-      img: Ryah
+      img: me
     }
   ],
   [
     //Array 2
     {
-      Name: 'Lyanola',
-      role: 'Organizer',
+      Name: 'Kushal',
+      role: 'Kushal',
       github: '',
       linkedin: '',
-      img: lyin
+      img: zoha
     },
     {
-      Name: 'Zoheb',
-      role: 'Organizer',
+      Name: 'Prince',
+      role: 'Prince',
+      github: '',
+      linkedin: '',
+      img: zoha
+    },
+    {
+      Name: 'Amrit',
+      role: 'Amrit',
       github: '',
       linkedin: '',
       img: zoha
@@ -274,42 +278,49 @@ const JudgesInfo = [
   [
     //Array 1
     {
-      Name: 'Rehan',
-      role: 'Organizer',
+      Name: 'Madan sir',
+      role: 'Madan sir',
       github: '',
       linkedin: '',
       img: me
     },
     {
       Name: 'Moon',
-      role: 'Organizer',
+      role: 'Principal Sir',
       github: '',
       linkedin: '',
-      img: moon
+      img: me
     },
     {
       Name: 'Ryah Garcia',
-      role: 'Organizer',
+      role: 'Mukesh Dai',
       github: '',
       linkedin: '',
-      img: Ryah
+      img: zoha
     }
   ],
   [
     //Array 2
     {
       Name: 'Lyanola',
-      role: 'Organizer',
-      github: '',
-      linkedin: '',
-      img: lyin
-    },
-    {
-      Name: 'Zoheb',
-      role: 'Organizer',
+      role: 'Bimal Dai',
       github: '',
       linkedin: '',
       img: zoha
+    },
+    {
+      Name: 'Zoheb',
+      role: 'Bikalpa Dai',
+      github: '',
+      linkedin: '',
+      img: zoha
+    },
+    {
+      Name: 'Zoheb',
+      role: 'Shreeya Didi',
+      github: '',
+      linkedin: '',
+      img: lyin
     }
   ]
 ];
@@ -320,11 +331,14 @@ const JudgesInfo = [
  * in a group of 3.
  */
 
+// const sponsorLogos = [
+//   [{src: cfc}, {src: sublime}, {src: echoAR}], //Array 1
+//   [{src: taskade}, {src: Replit}, {src: qoom}], //Array 2
+//   [{src: interviewC}, {src: pass}, {src: glimpse}], //Array 3
+//   [{src: egg}, {src: ll}, {src: ACF}] //Array 4
+// ];
 const sponsorLogos = [
-  [{src: cfc}, {src: sublime}, {src: echoAR}], //Array 1
-  [{src: taskade}, {src: Replit}, {src: qoom}], //Array 2
-  [{src: interviewC}, {src: pass}, {src: glimpse}], //Array 3
-  [{src: egg}, {src: ll}, {src: ACF}] //Array 4
+  [{},{src: cfc},{}], //Array 1
 ];
 
 /** Instructions
@@ -334,14 +348,14 @@ const frequentlyAskedQuestions = [
   [
     [
       {
-        label: 'What is a hackathon?',
+        label: 'What is a Hackathon?',
         content:
-          'A hackathon is a 24 hour event where "hackers" all over the globe will collaborate on creating a functioning software and hardware by the end of the event.'
+          'A hackathon is a event where "hackers" collaborate on creating a functioning software and hardware by the end of the event.'
       },
       {
         label: 'Who can attend?',
         content:
-          'Limbo Hacks is open to all undergraduate, high school students and middle school students from all schools.'
+          'Hackfest NCIT is open to only NCIT students.'
       },
       {
         label: 'I am a first time hacker, what should I do?',
@@ -363,16 +377,16 @@ const frequentlyAskedQuestions = [
       {
         label: 'I have more questions?',
         content:
-          'Reach us directly at (rehan@limbohacks.tech or hello@limbohacks.tech) we would happy to help you.'
+          'Reach us directly at (nosk@ncit.edu.np) we would happy to help you.'
       },
       {
-        label: 'Can i volunteer?',
+        label: 'Can I volunteer?',
         content:
           'Yes we are actively looking for volunteers, fill the form (in footer section) we will be glad to have you.'
       },
       {
         label: 'Will there be swag?',
-        content: 'Yes! Participants will recieveing Limbo Hacks swag!.'
+        content: 'Yes! Participants will recieveing Hackfest NCIT swag!.'
       }
     ]
   ]

@@ -28,8 +28,8 @@ export default function Media() {
         </a>
       </div>
       <div className="single">
-        <a rel="noreferrer" target="_blank" href={SOCIALS.devpost}>
-          <i className="fab fa-3x fa-dev"></i>
+        <a rel="noreferrer" target="_blank" href={SOCIALS.facebook}>
+          <i className="fab fa-3x fa-facebook"></i>
         </a>
       </div>
     </div>

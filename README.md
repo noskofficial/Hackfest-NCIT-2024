@@ -1,3 +1,22 @@
+# HACKFEST NCIT 2024
+
+## Setting Up Project Locally
+1. Clone the repo
+2. `git pull` to stay updated with the changes
+3. Check if of Node Package Manager(npm) is installed or not if not install one.
+```
+node --version
+```
+4. After Installing node then install Install pnpm Package Manager
+```
+npm i -g pnpm 
+pnpm i
+```
+5. Run the Local Server by:
+```
+pnpm dev
+```
+<!-- 
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -27,4 +46,4 @@ export default {
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list -->
