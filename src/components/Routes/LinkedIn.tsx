@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import { useEffect } from "react";
 
 function Linkedin() {
   useEffect(() => {
-    window.location.href = 'https://www.linkedin.com/company/officialnosk/';
+    window.location.href = "https://www.linkedin.com/company/officialnosk/";
   }, []);
   return <div></div>;
 }
