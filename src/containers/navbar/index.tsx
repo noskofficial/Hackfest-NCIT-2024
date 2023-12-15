@@ -11,17 +11,21 @@ import { MdxContent } from "../Mdx";
 
 const NAVIGATION_OFFSET = 66;
 
-const Wrapper = styled.div`
+interface WrapperProps {
+  toggle: string;
+}
+
+const Wrapper = styled.div<WrapperProps>`
   display: block;
   width: 40%;
 
   @media (max-width: 1000px) {
     margin: 0;
-    display: ${(props) => (props.toggle == "true" ? "none" : "static")};
+    display: ${(props) => (props.toggle === "true" ? "none" : "static")};
     height: 100vh;
     width: 100vw;
     position: fixed;
-    top: ${(props) => (props.toggle == "true" ? "-1000px" : "0px")};
+    top: ${(props) => (props.toggle === "true" ? "-1000px" : "0px")};
     transition: top 1s;
     .nav-content {
       height: 35%;
@@ -34,9 +38,9 @@ export const NavBar = () => {
   const [toggle, setToggle] = useState("true");
   const [isOffset, setIsOffset] = useState(false);
 
-  const navigation = useRef();
+  const navigation = useRef<HTMLDivElement>(null);
 
-  const listenScrollEvent = (e) => {
+  const listenScrollEvent = () => {
     if (window.scrollY >= NAVIGATION_OFFSET) {
       setIsOffset(true);
     } else {
@@ -49,8 +53,8 @@ export const NavBar = () => {
     return () => window.removeEventListener("scroll", listenScrollEvent);
   }, []);
 
-  const handleOutsideCick = (event: Event, ref: any) => {
-    if (!ref.current?.contains(event.target)) {
+  const handleOutsideCick = (event: MouseEvent, ref: React.RefObject<HTMLDivElement>) => {
+    if (ref.current && !ref.current.contains(event.target as Node)) {
       setToggle("true");
     } else {
       setToggle("false");
@@ -58,14 +62,10 @@ export const NavBar = () => {
   };
 
   useEffect(() => {
-    document.addEventListener("mousedown", (e) =>
-      handleOutsideCick(e, navigation)
-    );
+    document.addEventListener("mousedown", (e) => handleOutsideCick(e, navigation));
 
     return () => {
-      document.removeEventListener("mousedown", (e) =>
-        handleOutsideCick(e, navigation)
-      );
+      document.removeEventListener("mousedown", (e) => handleOutsideCick(e, navigation));
     };
   }, []);
 
@@ -104,6 +104,7 @@ export const NavBar = () => {
                 className="s-close"
                 onClick={() => setToggle("true")}
                 src={logoClose}
+                alt="Close Icon"
               />
             </ul>
           </div>
@@ -113,6 +114,7 @@ export const NavBar = () => {
           className="s-open"
           onClick={() => setToggle("false")}
           src={hamLogo}
+          alt="Open Icon"
         />
       </nav>
 

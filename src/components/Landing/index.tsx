@@ -7,6 +7,7 @@ interface BtnProps {
   type: string;
   overlay: string;
   className?: string;
+  link?: string;
 }
 
 const Btn: React.FC<BtnProps> = (props) => {

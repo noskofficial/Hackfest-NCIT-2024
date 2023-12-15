@@ -7,9 +7,9 @@ import { Fragment } from "react";
 // `@mdx-js/rollup`, and that it is configured with
 // `options.providerImportSource: '@mdx-js/react'`.
 
-const components = {
-  h1: (props: any) => <h1 {...props} />,
-};
+// const components = {
+//   h1: (props: any) => <h1 {...props} />,
+// };
 
 export const MdxContent = () => {
   return (

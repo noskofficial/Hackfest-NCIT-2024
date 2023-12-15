@@ -1,6 +1,6 @@
-import React from 'react';
-import {Btn} from '../Landing/index.jsx';
-import './style.css';
+import React from "react";
+import { Btn } from "../Landing/index.jsx";
+import "./style.css";
 
 interface IJoinTeam {
   placeholder: string;
@@ -8,7 +8,7 @@ interface IJoinTeam {
   content: string;
 }
 
-const JoinTeam: React.FC<IJoinTeam> = ({placeholder, formLink, content}) => {
+const JoinTeam: React.FC<IJoinTeam> = ({ placeholder, formLink, content }) => {
   return (
     <div className="joinT">
       <h3>{content} </h3>
@@ -19,8 +19,16 @@ const JoinTeam: React.FC<IJoinTeam> = ({placeholder, formLink, content}) => {
   );
 };
 
-const Member = ({info}: {info: any}) => {
-  const {github, role, name, img, linkedin} = info;
+interface MemberProps {
+  github?: string;
+  role: string;
+  name?: string;
+  img: string;
+  linkedin?: string;
+}
+
+const Member = ({ info }: { info: MemberProps }) => {
+  const { github, role, name, img, linkedin } = info;
   return (
     <div className="member">
       <img src={img} alt="HackFest NCIT 2024"></img>
@@ -38,4 +46,4 @@ const Member = ({info}: {info: any}) => {
   );
 };
 
-export {Member, JoinTeam};
+export { Member, JoinTeam };

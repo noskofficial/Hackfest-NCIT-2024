@@ -1,11 +1,11 @@
 import { Dispatch } from "react";
 
 export interface EventType {
-    title: string;
-    timings: string;
-    content: string;
+    title?: string;
+    timings?: string;
+    content?: string;
     image?: string;
-    ended: boolean;
+    ended?: boolean;
     previousYoutubeRecording?: string; // If event ended provide recording
     organizer?: string;
     role?:string;
@@ -13,10 +13,10 @@ export interface EventType {
   }
 
   export interface EventArrayType {
-    day: number;
-    event: boolean;
-    events: EventType[];
-    dumpDay:boolean;
+    day?: number;
+    event?: boolean;
+    events?: EventType[];
+    dumpDay?:boolean;
   }
   
   

@@ -1,16 +1,19 @@
-import { AnimatePresence, motion } from "framer-motion";
 import { useContext, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { CALENDER_VIEW } from "../../constants";
 import { calenderContext } from "../../Context/calender.context";
 import { Flexbox } from "../../elements/Flexbox";
-import { calenderMainLogic } from "./calender.function";
+import { EventObject, calenderMainLogic } from "./calender.function";
 import CalenderLayout from "./calender.layout";
 
 import * as H from "./style";
 
-const CalenderView = () => {
+interface CalenderViewProps {}
+
+const CalenderView: React.FC<CalenderViewProps> = () => {
   const contextTesting = useContext(calenderContext);
   const { state, dispatch } = contextTesting;
+
   return (
     <div className="card-body">
       {["S", "M", "T", "W", "T", "F", "S"].map((day, j) => (
@@ -20,48 +23,66 @@ const CalenderView = () => {
           justifyCenter={true}
           className="card-body-header"
         >
-          <p color="#9E9E9E">{day}</p>
+          <p style={{ color: "#9E9E9E" }}>{day}</p>
         </Flexbox>
       ))}
-      {state.dates.map((day: any, j: any) => (
-        <Flexbox
-          alignCenter={true}
-          justifyCenter={true}
-          className={
-            day.dumpDay
-              ? "card-body-inner"
-              : "card-body-inner card-body-inner__active"
-          }
-          onClick={() => {
-            if (day.event) {
-              dispatch({ type: "UPDATE_CALENDER_VIEW", data: 2 });
-              dispatch({
-                type: "SHOW_EVENTS_FOR_SELECTED_DATE",
-                data: state.dates[j].events,
-              });
-            } else {
-              alert("No events");
+      {state.dates.map(
+        (
+          day: {
+            day: number;
+            event: boolean;
+            dumpDay: boolean;
+          },
+          j: number
+        ) => (
+          <Flexbox
+            alignCenter={true}
+            justifyCenter={true}
+            className={
+              day.dumpDay
+                ? "card-body-inner"
+                : "card-body-inner card-body-inner__active"
             }
-          }}
-          key={j}
-        >
-          {day.event ? (
-            <p className="card-body-inner__active__event">{day.day}</p>
-          ) : (
-            <p>{day.day}</p>
-          )}
-        </Flexbox>
-      ))}
+            onClick={() => {
+              if (day.event) {
+                dispatch({ type: "UPDATE_CALENDER_VIEW", data: 2 });
+                dispatch({
+                  type: "SHOW_EVENTS_FOR_SELECTED_DATE",
+                  data: state.dates[j].events,
+                });
+              } else {
+                alert("No events");
+              }
+            }}
+            key={j}
+          >
+            {day.event ? (
+              <p className="card-body-inner__active__event">{day.day}</p>
+            ) : (
+              <p>{day.day}</p>
+            )}
+          </Flexbox>
+        )
+      )}
     </div>
   );
 };
 
-const EventsView = () => {
+interface EventProps {
+  title: string;
+  timings: string;
+  link: string;
+}
+
+interface EventsViewProps {}
+
+const EventsView: React.FC<EventsViewProps> = () => {
   const contextTesting = useContext(calenderContext);
-  const { state } = contextTesting as any;
+  const { state } = contextTesting;
+
   return (
     <H.EventContainer>
-      {state.selectedData.map((event: any, j: number) => (
+      {state.selectedData.map((event: EventProps, j: number) => (
         <H.Event
           key={j}
           onClick={() => {
@@ -72,19 +93,23 @@ const EventsView = () => {
             <h3>{event.title}</h3>
             <p>{event.timings}</p>
           </div>
-          <button>Add to calender</button>
+          <button>Add to calendar</button>
         </H.Event>
       ))}
     </H.EventContainer>
   );
 };
 
-export const Calender = ({ data }: any) => {
+export interface CalenderProps {
+  data: EventObject[];
+}
+
+export const Calender: React.FC<CalenderProps> = ({ data }) => {
   const contextTesting = useContext(calenderContext);
   const { state, dispatch } = contextTesting;
 
   useEffect(() => {
-    calenderMainLogic(state, dispatch, data);
+    return calenderMainLogic(state, dispatch, data);
   }, [state.month]);
 
   return (
