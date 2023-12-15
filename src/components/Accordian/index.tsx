@@ -1,12 +1,12 @@
 import React, { useState, useEffect, ReactNode, CSSProperties } from 'react';
 import './style.css';
 
-interface PanelProps {
-  label: string;
-  content: ReactNode;
-  activeTab: number;
-  index: number;
-  activateTab: () => void;
+export interface PanelProps {
+  label?: string;
+  content?: ReactNode;
+  activeTab?: number;
+  index?: number;
+  activateTab?: () => void;
 }
 
 interface AccordionProps {

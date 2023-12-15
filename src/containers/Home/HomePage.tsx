@@ -3,17 +3,21 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import { Logo, LogoSectionAbout } from "../../components/About/index";
-import { Accordion } from "../../components/Accordian/index";
+import { Accordion, PanelProps } from "../../components/Accordian/index";
 import Birds from "../../components/Animation";
 import Footer from "../../components/Footer/index";
 import { Myinfo } from "../../components/Landing/index";
-import { FirstPrize, PrizeHeading } from "../../components/Prizes/index";
+import {
+  FirstPrize,
+  PrizeHeading,
+  FirstPrizeProps,
+} from "../../components/Prizes/index";
 import Media from "../../components/Socials/index";
 import {
   Sponsor,
   SponsorsHead,
   SponsorUS,
-} from "../../components/Sponsors/sponsors.jsx";
+} from "../../components/Sponsors/sponsors";
 import { JoinTeam, Member } from "../../components/Team";
 import {
   FOOTER,
@@ -27,15 +31,21 @@ import {
 import MyCalender from "../calender";
 import "./about.css";
 import pattern from "./assets/pattern4.png";
-import { UseMedia } from "../../hooks/useMedia.js";
+import { UseMedia } from "../../hooks/useMedia";
 
-const SponsorGroup = (props, index) => {
+interface SponsorGroupProps {
+  src?: string;
+}
+
+const SponsorGroup: React.FC<{
+  sponsors: SponsorGroupProps[];
+  index: number;
+}> = ({ sponsors, index }) => {
   return (
     <Row key={index}>
-      {props.map((s, i) => (
+      {sponsors.map((s, i) => (
         <Col key={i} className="" sm={12} lg={4} md={6}>
-          {" "}
-          <Sponsor srcx={s.src} />{" "}
+          <Sponsor srcx={s?.src || ""} />
         </Col>
       ))}
     </Row>
@@ -43,10 +53,13 @@ const SponsorGroup = (props, index) => {
 };
 
 // Prize group
-const PrizeGroup = (props, index) => {
+const PrizeGroup: React.FC<{ prizes: FirstPrizeProps[]; index: number }> = ({
+  prizes,
+  index,
+}) => {
   return (
     <Row key={index}>
-      {props.map((s, i) => (
+      {prizes.map((s, i) => (
         <Col key={i} className="" sm={12} lg={4} md={4}>
           <FirstPrize icon={s.icon} type={s.type} content={s.content} />
         </Col>
@@ -55,11 +68,20 @@ const PrizeGroup = (props, index) => {
   );
 };
 
+interface TeamMembersProps {
+  Name: string;
+  role: string;
+  github: string;
+  linkedin: string;
+  img: string;
+}
 // Prize group ending
-const TeamMembers = (props, index) => {
+const TeamMembers: React.FC<{ members: TeamMembersProps[] }> = ({
+  members,
+}) => {
   return (
-    <Row key={index} className="members">
-      {props.map((s, i) => (
+    <Row className="members">
+      {members.map((s, i) => (
         <Col key={i} className="" sm={12} lg={4} md={4}>
           <Member info={s} />
         </Col>
@@ -68,10 +90,13 @@ const TeamMembers = (props, index) => {
   );
 };
 
-const FrequentlyAsked = (props, index) => {
+const FrequentlyAsked: React.FC<{ panels: PanelProps[][]; index: number }> = ({
+  panels,
+  index,
+}) => {
   return (
     <Row key={index} className="sf">
-      {props.map((s, i) => (
+      {panels.map((s, i) => (
         <Col key={i} sm={12} lg={6} md={6}>
           <Accordion panels={s} />
         </Col>
@@ -117,14 +142,18 @@ export default function HomePage() {
 
         {/* ********Frequently asked Questions here ***** */}
         <div className="Myfaqs" id="faq">
-          {frequentlyAskedQuestions.map(FrequentlyAsked)}
+          {frequentlyAskedQuestions.map((panels, index) => (
+            <FrequentlyAsked key={index} index={index} panels={panels} />
+          ))}
           {/* ********Frequently asked Questions ending here ***** */}
         </div>
 
         {/* ********Prizes here ***** */}
         <Row className="prizesection" id="prizes">
           <PrizeHeading type="Prize section" />
-          {Prizeinfo.map(PrizeGroup)}
+          {Prizeinfo.map((prizes, index) => (
+            <PrizeGroup key={index} index={index} prizes={prizes} />
+          ))}
         </Row>
         {/* ********Prizes ending here ***** */}
 
@@ -138,7 +167,9 @@ export default function HomePage() {
         <Row className="sponsorSection" id="sponsors">
           <SponsorsHead />
           <SponsorUS />
-          {sponsorLogos.map(SponsorGroup)}
+          {sponsorLogos.map((sponsers, index) => (
+            <SponsorGroup key={index} index={index} sponsors={sponsers} />
+          ))}
         </Row>
         {/* ********Sponsors ending here ***** */}
 
@@ -146,27 +177,31 @@ export default function HomePage() {
 
         {/* ********Team here ***** */}
         <h1 id="team">Our Team</h1>
-        {/* {FOOTER.JOIN_TEAM.required && (
+        {FOOTER.JOIN_TEAM.required && (
           <JoinTeam
             placeholder="Join our team"
             formLink={FOOTER.JOIN_TEAM.src}
             content="Interested in joining our team"
           />
-        )} */}
-        {TeamInfo.map(TeamMembers)}
+        )}
+        {TeamInfo.map((members, index) => (
+          <TeamMembers key={index} members={members} />
+        ))}
         {/* ********Team ending here ***** */}
 
         {/* ********Judges here ***** */}
 
         <h1 id="team">Judges</h1>
-        {/* {FOOTER.JOIN_TEAM.required && (
+        {FOOTER.JOIN_TEAM.required && (
           <JoinTeam
             placeholder="Join our team"
             formLink={TOP_SECTION.JUDGES_FORM_LINK}
             content="Interested in being judge"
           />
-        )} */}
-        {JudgesInfo.map(TeamMembers)}
+        )}
+        {JudgesInfo.map((members, index) => (
+          <TeamMembers key={index} members={members} />
+        ))}
         {/* ********Team ending here ***** */}
       </Container>
       <Footer />

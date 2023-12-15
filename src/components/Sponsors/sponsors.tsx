@@ -1,14 +1,19 @@
-import { SOCIALS } from "../../Module/General.js";
-import { Btn } from "../Landing/index.jsx";
+import { SOCIALS } from "../../Module/General";
+import { Btn } from "../Landing";
 import "./sponsors.scss";
 
 function SponsorsHead() {
   return <h1 className="shead">Sponsors & Partners</h1>;
 }
 
-function Sponsor(props) {
+export interface SponsorProps {
+  srcx: string;
+  src?: string;
+}
+
+function Sponsor(props: SponsorProps) {
   return (
-    <div className="Sponsor ">
+    <div className="Sponsor">
       <img src={props.srcx} alt="HackFest NCIT 2024"></img>
     </div>
   );
