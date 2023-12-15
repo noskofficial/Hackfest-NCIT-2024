@@ -1,85 +1,70 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState, useEffect, ReactNode, CSSProperties } from 'react';
 import './style.css';
 
-class Panel extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      height: 0
-    };
-  }
-
-  componentDidMount() {
-    window.setTimeout(() => {
-      const el = ReactDOM.findDOMNode(this);
-      const height = el.querySelector('.panel__inner').scrollHeight;
-      this.setState({
-        height
-      });
-    }, 333);
-  }
-
-  render() {
-    const {label, content, activeTab, index, activateTab} = this.props;
-    const {height} = this.state;
-    const isActive = activeTab === index;
-    const innerStyle = {
-      height: `${isActive ? height : 0}px`
-    };
-
-    return (
-      <div className="panel" role="tabpanel" aria-expanded={isActive}>
-        <button className="panel__label" role="tab" onClick={activateTab}>
-          {label}
-        </button>
-        <div
-          className="panel__inner"
-          style={innerStyle}
-          aria-hidden={!isActive}
-        >
-          <p className="panel__content">{content}</p>
-        </div>
-      </div>
-    );
-  }
+interface PanelProps {
+  label: string;
+  content: ReactNode;
+  activeTab: number;
+  index: number;
+  activateTab: () => void;
 }
 
-class Accordion extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      activeTab: 1
-    };
-
-    this.activateTab = this.activateTab.bind(this);
-  }
-
-  activateTab(index) {
-    this.setState(prev => ({
-      activeTab: prev.activeTab === index ? -1 : index
-    }));
-  }
-
-  render() {
-    const {panels} = this.props;
-    const {activeTab} = this.state;
-    return (
-      <div className="accordion" role="tablist">
-        {panels.map((panel, index) => (
-          <Panel
-            key={index}
-            activeTab={activeTab}
-            index={index}
-            {...panel}
-            activateTab={this.activateTab.bind(null, index)}
-          />
-        ))}
-      </div>
-    );
-  }
+interface AccordionProps {
+  panels: PanelProps[];
 }
 
-export {Accordion};
+const Panel: React.FC<PanelProps> = ({
+  label,
+  content,
+  activeTab,
+  index,
+  activateTab,
+}) => {
+  const [height, setHeight] = useState<number>(0);
+
+  useEffect(() => {
+    const el = document.querySelector('.panel__inner');
+    const newHeight = el?.scrollHeight || 0;
+    setHeight(newHeight);
+  }, [content]);
+
+  const isActive = activeTab === index;
+  const innerStyle: CSSProperties = {
+    height: `${isActive ? height : 0}px`,
+  };
+
+  return (
+    <div className="panel" role="tabpanel" aria-expanded={isActive}>
+      <button className="panel__label" role="tab" onClick={activateTab}>
+        {label}
+      </button>
+      <div className="panel__inner" style={innerStyle} aria-hidden={!isActive}>
+        <p className="panel__content">{content}</p>
+      </div>
+    </div>
+  );
+};
+
+const Accordion: React.FC<AccordionProps> = ({ panels }) => {
+  const [activeTab, setActiveTab] = useState<number>(1);
+
+  const activateTab = (index: number) => {
+    setActiveTab((prev) => (prev === index ? -1 : index));
+  };
+
+  return (
+    <div className="accordion" role="tablist">
+      {panels.map((panel, index) => (
+        <Panel
+          key={index}
+          {...panel}
+          activeTab={activeTab}
+          index={index}
+          activateTab={() => activateTab(index)}
+        />
+      ))}
+    </div>
+  );
+};
+
+export { Accordion };
