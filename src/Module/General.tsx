@@ -7,18 +7,18 @@ import hackathonLogo from './Assets/hackathonLogo.png';
  */
 
 import boy from './Assets/boy.png';
-import pass from './Assets/sponsorsLogos/1pass.png';
-import ACF from './Assets/sponsorsLogos/ACF.png';
+// import pass from './Assets/sponsorsLogos/1pass.png';
+// import ACF from './Assets/sponsorsLogos/ACF.png';
 import cfc from './Assets/sponsorsLogos/cfc.png';
-import echoAR from './Assets/sponsorsLogos/echoAR.png';
-import egg from './Assets/sponsorsLogos/egg.png';
-import glimpse from './Assets/sponsorsLogos/glimpse.png';
-import interviewC from './Assets/sponsorsLogos/interview-cake.jpg';
-import ll from './Assets/sponsorsLogos/ll.png';
-import qoom from './Assets/sponsorsLogos/qoom.svg';
-import Replit from './Assets/sponsorsLogos/replit.png';
-import sublime from './Assets/sponsorsLogos/sublime.png';
-import taskade from './Assets/sponsorsLogos/taskade.png';
+// import echoAR from './Assets/sponsorsLogos/echoAR.png';
+// import egg from './Assets/sponsorsLogos/egg.png';
+// import glimpse from './Assets/sponsorsLogos/glimpse.png';
+// import interviewC from './Assets/sponsorsLogos/interview-cake.jpg';
+// import ll from './Assets/sponsorsLogos/ll.png';
+// import qoom from './Assets/sponsorsLogos/qoom.svg';
+// import Replit from './Assets/sponsorsLogos/replit.png';
+// import sublime from './Assets/sponsorsLogos/sublime.png';
+// import taskade from './Assets/sponsorsLogos/taskade.png';
 import lyin from './Assets/teami/lyin.jpg';
 
 /** Put all your sponsors logo inside folder `sponsorLogos`
